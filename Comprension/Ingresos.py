@@ -6,8 +6,9 @@ def lectura():
         send=input("ingrese lo que desea: ")
         return cuentas(send)
     if busqueda == "2":
-        
-        return Dices
+        retorno = Dices.Seleccion()
+        return retorno
+    
     
 def cuentas(recepcion):
     match recepcion:

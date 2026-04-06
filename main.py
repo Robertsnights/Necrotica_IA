@@ -14,7 +14,7 @@ salida="exit"
 
 #region funcion base
 def main():
-    L=input("¿desea iniciar?")
+    L=input("¿desea iniciar?: ")
     while L != salida:
         system("cls")
         Valorfinal=Ingresos.lectura()
