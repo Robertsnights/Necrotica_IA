@@ -1,23 +1,38 @@
 import datetime as dt
 
+ident=0
+
 def Comparar():
     recibir="si"
+    llegada = "dados"
+    
     try:
         with open("Guardados.txt","x") as archivo:
             crear(archivo, recibir)
     except FileExistsError:
-        Cargar(archivo, recibir)
+        with open("Guardados.txt","a") as archivo:
+            crear(archivo, recibir)
 
 def crear(elemento,recibir):
     NewArch=elemento
-    NewArch.write(recibir)
+    datazo=recibir
+    llegada = "dados"
+    NewArch.write(CrearPaquete(datazo, llegada)+"\n")
 
-def Cargar(archivo, recibir):
-    archivo.write(str(recibir)+"\n")
+def Cargar(ele, recibir):
+    llegada = "dados"
+    Arch=ele
+    dato=recibir
+    Arch.write(CrearPaquete(dato, llegada)+"\n")
 
-def CrearPaquete():
-    ahora=dt.now
-    formato=ahora.strftime("%d-%m %H:%M")
-    tipo=0
-    paquete=[]
+def CrearPaquete(Dato, llegada):
+    ahora=dt.time
+    formato=ahora.isoformat
+    id=ident
+    tipo=str(type(Dato))
+    #paquete= [ID, fecha, tipo de dato, Valor, de donde salio]
+    paquete=[id, formato, tipo, str(Dato), str(llegada)]
+    id+=1
+    return paquete
     
+Comparar()
