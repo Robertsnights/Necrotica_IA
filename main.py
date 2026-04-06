@@ -1,15 +1,29 @@
-a=""
-b=""
-c=0
+#region Materiales
+from Comprension import Ingresos
+from os import system
+#endregion 
+
+#region variables
+L=" "
 respuesta=""
+salida="exit"
+#endregion
 
+#region funciones
+#endregion
+
+#region funcion base
 def main():
-    a= int(input("ingrese un valor: "))
-    b= int(input("ingrese un valor: "))
+    L=input("¿desea iniciar?")
+    while L != salida:
+        system("cls")
+        Valorfinal=Ingresos.lectura()
+        respuesta="el resultado es: "+ str(Valorfinal)
+        print(respuesta)
+        print("exit para cerrar el programa")
+        L=input("ingrese una nueva instrucción: ")
+#endregion
 
-    c=a+b
-    respuesta="el valor es: " + str(c)
-    print(respuesta)
-
-    
+#region clave
 main()
+#endregion
