@@ -1,38 +1,59 @@
-import datetime as dt
-
-ident=0
+from datetime import datetime as dt
 
 def Comparar():
     recibir="si"
     llegada = "dados"
-    
+    ident=int(RecordarID())
     try:
-        with open("Guardados.txt","x") as archivo:
-            crear(archivo, recibir)
+        with open("Guardados.txt","a") as archivo:
+            ident+=1
+            crear(ident, archivo, recibir)
+            GuardarID(ident)
+            
+            
+            
+            
     except FileExistsError:
         with open("Guardados.txt","a") as archivo:
-            crear(archivo, recibir)
+            ident+=1
+            Cargar(ident, archivo, recibir)
+            GuardarID(ident)
+            
 
-def crear(elemento,recibir):
+def crear(identificador, elemento , recibir):
     NewArch=elemento
     datazo=recibir
+    identi=identificador
     llegada = "dados"
-    NewArch.write(CrearPaquete(datazo, llegada)+"\n")
+    NewArch.write(  " ".join(CrearPaquete(identi, datazo, llegada))+"\n")
 
-def Cargar(ele, recibir):
+def Cargar(identificador, ele, recibir):
     llegada = "dados"
     Arch=ele
     dato=recibir
-    Arch.write(CrearPaquete(dato, llegada)+"\n")
+    identi=identificador
+    Arch.write( " ".join(CrearPaquete(identi, dato, llegada))+ "\n")
 
-def CrearPaquete(Dato, llegada):
-    ahora=dt.time
-    formato=ahora.isoformat
+def CrearPaquete(ident, Dato, llegada):
+    ahora=dt.now()
+    formato=ahora.isoformat()
     id=ident
     tipo=str(type(Dato))
     #paquete= [ID, fecha, tipo de dato, Valor, de donde salio]
-    paquete=[id, formato, tipo, str(Dato), str(llegada)]
-    id+=1
+    paquete=[str(id), str(formato), str(tipo), str(Dato), str(llegada)]
     return paquete
-    
+ 
+def RecordarID():
+    r=0
+    with open("Regleta.txt","r") as Regla:
+        r=int(Regla.read())
+            
+    return r
+
+def GuardarID(Regla):
+    r=Regla
+    with open("Regleta.txt", "w") as Norma:
+        Norma.write(str(r))
+    return None
+ 
 Comparar()
