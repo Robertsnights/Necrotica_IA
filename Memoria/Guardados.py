@@ -9,10 +9,7 @@ def Comparar():
             ident+=1
             crear(ident, archivo, recibir)
             GuardarID(ident)
-            
-            
-            
-            
+     
     except FileExistsError:
         with open("Guardados.txt","a") as archivo:
             ident+=1
@@ -38,7 +35,7 @@ def CrearPaquete(ident, Dato, llegada):
     ahora=dt.now()
     formato=ahora.isoformat()
     id=ident
-    tipo=str(type(Dato))
+    tipo=type(Dato)
     #paquete= [ID, fecha, tipo de dato, Valor, de donde salio]
     paquete=[str(id), str(formato), str(tipo), str(Dato), str(llegada)]
     return paquete

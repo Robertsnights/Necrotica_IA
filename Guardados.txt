@@ -1,12 +1,1 @@
-0 2026-04-07T18:46:55.647304 <class 'str'> si dados
-0 2026-04-07T18:47:16.775282 <class 'str'> si dados
-0 2026-04-07T18:47:28.036348 <class 'str'> si dados
-0 2026-04-07T18:48:14.600594 <class 'str'> si dados
-0 2026-04-07T18:49:34.752123 <class 'str'> si dados
-1 2026-04-07T18:51:41.211375 <class 'str'> si dados
-1 2026-04-07T18:51:52.395653 <class 'str'> si dados
-<built-in function id> 2026-04-07T18:55:18.218657 <class 'str'> si dados
-1 2026-04-07T18:57:44.971898 <class 'str'> si dados
-1 2026-04-07T20:14:05.852811 <class 'str'> si dados
-2 2026-04-07T20:14:45.346320 <class 'str'> si dados
-3 2026-04-07T20:14:57.798540 <class 'str'> si dados
+4 2026-04-09T09:22:21.512275 <class 'str'> si dados

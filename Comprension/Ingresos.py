@@ -1,13 +1,16 @@
-from Logica import Matematicas, Dices
+from Logica import Matematicas
+
+pregunta= ""
+salida= "retorno"
 
 def lectura():
-    busqueda=input("elija que hacer (1= matematicas, 2=dados ,dentro de poco): ")   
-    if busqueda =="1":
-        send=input("ingrese lo que desea: ")
-        return cuentas(send)
-    if busqueda == "2":
-        retorno = Dices.Seleccion()
-        return retorno
+    ListaDeOperaciones=["Suma", "Resta", "Multi", "Div\n", "Sumas", "Restas", "Multis", "Divs"]
+    for i in range(len(ListaDeOperaciones)):
+        print(ListaDeOperaciones[i]+" ")
+    
+    send=input("ingrese lo que desea: ")
+    return cuentas(send)
+
     
     
 def cuentas(recepcion):
