@@ -27,7 +27,10 @@ def ampliar(Palabra):
             Dicc.write(Palabra+",")
             
 def Cargar():
-    return None    
+    with open("Diccionario.txt", "r") as Dicc:
+        Carga= [Linea.strip().split(",") for Linea in Dicc]
+        return Carga    
     
 def ErrorExistente():
     return None
+

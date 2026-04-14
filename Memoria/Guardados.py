@@ -1,31 +1,29 @@
 from datetime import datetime as dt
 
-def Comparar():
-    recibir="si"
-    llegada = "dados"
+def Comparar(valor, entrada):
+    recibir= valor
+    llegada = entrada
     ident=int(RecordarID())
     try:
         with open("Guardados.txt","a") as archivo:
             ident+=1
-            crear(ident, archivo, recibir)
+            crear(ident, archivo, recibir, llegada)
             GuardarID(ident)
      
     except FileExistsError:
         with open("Guardados.txt","a") as archivo:
             ident+=1
-            Cargar(ident, archivo, recibir)
+            Cargar(ident, archivo, recibir, llegada)
             GuardarID(ident)
             
 
-def crear(identificador, elemento , recibir):
+def crear(identificador, elemento , recibir,llegada):
     NewArch=elemento
     datazo=recibir
     identi=identificador
-    llegada = "dados"
     NewArch.write(  " ".join(CrearPaquete(identi, datazo, llegada))+"\n")
 
-def Cargar(identificador, ele, recibir):
-    llegada = "dados"
+def Cargar(identificador, ele, recibir,llegada):
     Arch=ele
     dato=recibir
     identi=identificador
@@ -53,4 +51,3 @@ def GuardarID(Regla):
         Norma.write(str(r))
     return None
  
-Comparar()
